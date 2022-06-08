@@ -1,0 +1,99 @@
+0.Создал внешний репозитарий на гитхабе git 
+	clone https://github.com/SpinozaWeb/git_hw2.git
+ В локальном репозитории сделал "нулевой"  коммит  git commit --allow-empty -m "initial"
+ **************************************
+ Можно по другому - сздать репозитарий удалённо через терминал
+ 1)Установить GitHub CLI. Инструкция по установке https://github.com/cli/cli#installation
+ У меня windows и потому winget install --id GitHub.cli - соглачится со всем - после установки перезапустить терминал git bash
+ 2)Создать токен https://github.com/settings/tokens
+ 3)В терминале набрать gh auth login -> появится диалог и нужно будет ответить на вопросы с помощью клавиатуры и стрелочек:
+  What account do you want to log into? - ответ GitHub.com
+  What is your preferred protocol for Git operations? HTTPS
+  Authenticate Git with your GitHub credentials? Yes
+  How would you like to authenticate GitHub CLI? Paste an authentication token 
+  Paste your authentication token:  вставить токен из п.2
+  
+  gh repo create -> опять диалог и вот мои ответы
+  ? What would you like to do? Create a new repository on GitHub from scratch
+  ? Repository name git_hw2
+  ? Repository name git_hw2
+  ? Description repo for train git branch
+  ? Description repo for train git branch
+  ? Visibility Public
+  ? Would you like to add a .gitignore? No
+  ? Would you like to add a license? No
+  ? This will create "git_hw2" as a public repository on GitHub. Continue? Yes
+  ✓ Created repository SpinozaWeb/git_hw2 on GitHub
+  ? Clone the new repository locally? Yes
+  Initialized empty Git repository in C:/terminal/git_hw2/.git/
+  
+  git commit --allow-empty -m "initial"
+  
+1. На локальном репозитории сделать ветки для:
+- Postman 
+git branch postman
+- Jmeter
+git branch jmeter
+- CheckLists
+git branch check_lists
+- Bag Reports
+git branch bag_reports
+- SQL
+git branch sql
+- Charles
+git branch charles
+- Mobile testing
+git branch mobile_testing
+
+2. Запушить все ветки на внешний репозиторий
+git push -u origin postman
+git push -u origin jmeter
+git push -u origin check_lists
+git push -u origin bag_reports
+git push -u origin sql
+git push -u origin charles
+git push -u origin mobile_testing
+     или все ветки сразу
+git push --all origin	 
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+git checkout bag_reports
+vim bag_report.txt
+"Ввел текст :
+Summary
+Project
+Component
+Version
+Severity
+Priority
+Status
+Author
+Assignet To
+Enviroment
+Description:
+	Steps to Reproduce
+	Result
+	Expected Result
+Attachment"
+и сохранил
+4. Запушить структуру багрепорта на внешний репозиторий
+git add bag_report.txt && git commit bag_report.txt -m "add bag_report.txt" &&  git push --set-upstream origin bag_reports
+5. Вмержить ветку Bag Reports в Main
+ git merge bag_reports -m "merge bag_reports"
+6. Запушить main на внешний репозиторий.
+git push --set-upstream origin main
+7. В ветке CheckLists набросать структуру чек листа.
+git checkout check_lists
+vim check_list.txt
+Ввёл текст:
+"Номер по порядку | Что проверяем | Результат проверки" 
+и сохранил
+8. Запушить структуру на внешний репозиторий
+git add check_list.txt && git commit check_list.txt -m "add check_list.txt" && git push --set-upstream origin check_lists
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+Зайти на гитхаб .
+Найти созданный репозиторий git_hw2 и зайти в него
+Нажать кнопку Pull Request 
+Нажать кнопку Сompare and Pull request - заполнить поля формы и сделать merdge
+10. Синхронизировать Внешнюю и Локальную ветки Main
+git pull
