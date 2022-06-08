@@ -1,0 +1,299 @@
+JSON
+ 4. Создать внешний репозиторий c названием JSON.
+ На странике гитхаба найти аватар своего профиля и там возле него есть плюсик.
+ Нажать на плюсик и выбрать из меню New repository -> появится страница добавления репозитория.
+ Вбить имя JSON и нажать кнопку Create repository - репозиторий создан
+ 5. Клонировать репозиторий JSON на локальный компьютер.
+ git clone https://github.com/SpinozaWeb/JSON.git
+ 6. Внутри локального JSON создать файл “new.json”.
+ cd JSON 
+ touch new.json
+ 7. Добавить файл под гит.
+ git add new.json
+ 8. Закоммитить файл.
+ git commit -m "My first commit. Add new.json"
+ 9. Отправить файл на внешний GitHub репозиторий.
+ git push
+ 10. Отредактировать содержание файла “new.json” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате JSON.
+ vim new.json
+ Жму I
+ Набираю текст
+ {	
+"ФИО" : "Майер Андрей Леонидович",
+"Возраст" : "37 лет", 
+"Количество домашних животных" : "2", 
+"Будущая желаемая зарплата" : "2500$"
+}
+ Жму Escape, потом :, потом w, потом q, потом Enter
+ 11. Отправить изменения на внешний репозиторий.
+ git add new.json && git commit -m "My second commit. Add info to new.json" && git push
+ 12. Создать файл preferences.json
+ touch preferences.json
+ 13. В файл preferences.json добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате JSON.
+ vim preferences.json
+ Жму I
+ Набираю текст
+ {
+ "preferences":{
+	"Любимый фильм" : "О чём говорят мужчины",
+	"Любимый сериал" : "Локи",
+	"Любимая еда" : "шашлык",
+	"Любимое время года" : "Лето",
+	"Страна, которую хотели бы посетить" : "Грузия" 
+	}
+}
+ Жму Escape, потом :, потом w, потом q, потом Enter
+ 14. Создать файл sklls.json добавить информацию о скиллах которые будут изучены на курсе в формате JSON
+ vim sklls.json
+ Жму I
+ Набираю текст
+ {
+ "Skills":{
+	"Linux bash": "yes",
+	"GIT": "yes",
+	"Chrome dev tools":"yes",
+	"Test API for Postman":"yes",
+	"SQL Basics":"yes",
+	"Codeception":"yes",
+	"Mobile testing":"yes",
+	"JS Basics":"yes",
+	"CSS Basics":"yes",
+	"Working with ADB":"yes",
+	"Working with Charlies/Fiddler":"yes",
+	"Explorary testing":"yes",
+	"White box testing":"yes"
+    }
+}
+ Жму Escape, потом :, потом w, потом q, потом Enter
+ 15. Отправить сразу 2 файла на внешний репозиторий.
+ git add preferences.json sklls.json && git commit -m "add preferences.json, add sklls.json" && git push
+ 16. На веб интерфейсе создать файл bug_report.json.
+ Открыть гитхаб, перейти в репозиторий TXT, найти кнопку Add file ->Create new file - нажать
+ Откроется страница с формой для нового файла. Заполнить имя файла.
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ Внизу формы добавить комментарий к комиту "add bug_report.json" и сделать комит нажав Commit changes
+ 18. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт в формате JSON.
+ Найти в репозитории bug_report.txt и открыть его . Нажать на карандаш справа -> форма редактирования.
+ Вбить текст:
+ {
+   "Bug report":{
+      "Reproducibility":"always",
+      "Severity":"trivial",
+      "Priority":"minor",
+      "Product Version":"none",
+      "Summary":"Emoji is not displayed in the comments to the news ixbt.com",
+      "Description":"Не отображаются эмодзи в комментариях новостей на сайте ixbt.com",
+      "Steps To Reproduce":{
+         "attention":"Все действия делать в Google Chrome",
+         "step1":"Открыть сайт ixbt.com",
+         "step2":"Открыть любую ссылку из раздела новости",
+         "step3":"Сделать логин на сайт",
+         "step4":"Найти форму для ввода комментариев",
+         "step5":"Поставить курсор в форму и нажать правой кнопкой мыши -> будет показано меню",
+         "step6":"Выбрать пункт эмодзи и выбрать любую эмодзи несколько раз - они появится на форме",
+         "step7":"Нажать отправить -> страница перезагрузится",
+         "result":"комментарий есть, а содержимое не отображается"
+      }
+  }
+ }
+ 19. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ Внизу формы нажать Commit changes с комментарием "add info to bug_report.json"
+ 20. Синхронизировать внешний и локальный репозиторий JSON
+ git pull
+
+
+XML
+ 21. Создать внешний репозиторий c названием XML.
+ На странике гитхаба найти аватар своего профиля и там возле него есть плюсик.
+ Нажать на плюсик и выбрать из меню New repository -> появится страница добавления репозитория.
+ Вбить имя XML и нажать кнопку Create repository - репозиторий создан
+ 22. Клонировать репозиторий XML на локальный компьютер.
+ git clone https://github.com/SpinozaWeb/XML.git
+ 23. Внутри локального XML создать файл “new.xml”.
+ touch new.xml
+ 24. Добавить файл под гит.
+ git add new.xml
+ 25. Закоммитить файл.
+ git commit -m "My first commit. Add new.xml"
+ 26. Отправить файл на внешний GitHub репозиторий.
+ git push
+ 27. Отредактировать содержание файла “new.xml” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате XML.
+ vim new.xml
+  Жму I
+ Набираю текст
+ <?xml version="1.0" encoding="UTF-8" ?>
+<bio>
+	<firstName_lastName_patronymic>Майер Андрей Леонидович</firstName_lastName_patronymic>
+	<age>37 лет</age>
+	<number_of_pets>2</number_of_pets>
+	<future_salary>2500$</future_salary>
+</bio> 
+ 
+ Жму Escape, потом :, потом w, потом q, потом Enter
+ 28. Отправить изменения на внешний репозиторий.
+ git add new.xml && git commit -m "My second commit. Add info to new.xml" && git push
+ 29. Создать файл preferences.xml
+ touch preferences.xml
+ 30. В файл preferences.xml добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате XML.
+ vim preferences.xml
+ Жму I
+ Набираю текст
+ <?xml version="1.0" encoding="UTF-8" ?>
+<preferences>
+	<favorite_film>О чём говорят мужчины</favorite_film>
+	<favorite_tv_series>Локи</favorite_tv_series>
+	<favorite_food>Шашлык</favorite_food>	
+	<favorite_season>Лето</favorite_season>
+	<country_like_visit>Грузия</country_like_visit>
+</preferences>
+ Жму Escape, потом :, потом w, потом q, потом Enter
+ 31. Создать файл sklls.xml добавить информацию о скиллах которые будут изучены на курсе в формате XML
+ vim sklls.xml
+  Жму I
+ Набираю текст
+ <?xml version="1.0" encoding="UTF-8" ?>
+ <skills>
+	<termnal_bash>yes</termnal_bash>
+	<git>yes</git>
+	<chrome_dev_tools>yes</chrome_dev_tools>
+	<test_api_postman>yes</test_api_postman>
+	<sql_basics>yes</sql_basics>
+	<mobile_testing>yes</mobile_testing>
+	<js_basics>yes</js_basics>
+	<css_basics>yes</css_basics>
+	<working_with_adb>yes</working_with_adb>
+	<working_with_charlies_fiddler>yes</working_with_charlies_fiddler>
+	<explorary_testing>yes</explorary_testing>
+	<white_box_testing>yes</white_box_testing>	    
+</skills>
+ 
+ Жму Escape, потом :, потом w, потом q, потом Enter
+ 32. Сделать коммит в одну строку.
+ git add preferences.xml sklls.xml && git commit -m "add preferences.xml, add sklls.xml"
+ 33. Отправить сразу 2 файла на внешний репозиторий.
+ git push
+ 34. На веб интерфейсе создать файл bug_report.xml.
+ Открыть гитхаб, перейти в репозиторий TXT, найти кнопку Add file ->Create new file - нажать
+ Откроется страница с формой для нового файла. Заполнить имя файла.
+ 35. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ Внизу формы добавить комментарий к комиту "add bug_report.xml" и сделать комит нажав Commit changes
+ 36. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML.
+  Найти в репозитории bug_report.xml и открыть его . Нажать на карандаш справа -> форма редактирования.
+ Вбить текст:
+ <?xml version="1.0" encoding="UTF-8" ?>
+<bug_report>
+	<reproducibility>always</reproducibility>
+	<severity>trivial</severity>
+	<priority>minor</priority>
+	<product_version>none</product_version>
+	<summary>Emoji is not displayed in the comments to the news ixbt.com</summary>
+	<description>Не отображаются эмодзи в комменнтариях новостей на сайте ixbt.com</description>
+	<steps_to_reproduce>
+Все действия делать в Google Chrome
+1)Открыть сайт ixbt.com
+2)Открыть любую ссылку из раздела новости
+3)Сделать логин на сайт 
+4)Найти форму для ввода комментариев
+5)Поставить курсор в форму и нажать правой кнопкой мыши -> будет показано меню
+6)Выбрать пункт эмодзи и выбрать любую эмодзи несколько раз - они появится на форме 
+7)Нажать отправить -> страница перезагрузится
+Итог - комменнтарий есть, а содержимое не отображается
+</steps_to_reproduce>
+</bug_report>
+ 37. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ Внизу формы нажать Commit changes с комментарием "add info to bug_report.xml"
+ 38. Синхронизировать внешний и локальный репозиторий XML
+ git pull
+ 
+ TXT
+ 1. Создать внешний репозиторий c названием TXT.
+ На странике гитхаба найти аватар своего профиля и там возле него есть плюсик.
+ Нажать на плюсик и выбрать из меню New repository -> появится страница добавления репозитория.
+ Вбить имя TXT и нажать кнопку Create repository - репозиторий создан
+ 2. Клонировать репозиторий TXT на локальный компьютер.  
+ git clone https://github.com/SpinozaWeb/TXT.git
+ 3. Внутри локального TXT создать файл “new.txt”.
+ cd TXT 
+ touch new.txt
+ 4. Добавить файл под гит.
+ git add new.txt
+ 5. Закоммитить файл.
+ git commit -m "My first commit. Add new.txt"
+ 6. Отправить файл на внешний GitHub репозиторий.
+ git push
+ 7. Отредактировать содержание файла “new.txt” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате TXT.
+ vim new.txt
+ Жму I
+ Набираю текст
+ ФИО : Майер Андрей Леонидович
+ Возраст : 37 лет 
+ Количество домашних животных : 1 собака и 1 кот 
+ Будущая желаемая зарплата : 2500$
+ Жму Escape, потом :, потом w, потом q, потом Enter
+ 8. Отправить изменения на внешний репозиторий.
+ git add new.txt && git commit -m "My second commit. Add info to new.txt"
+ git push
+ 9. Создать файл preferences.txt
+ touch preferences.txt
+ 10. В файл preferences.txt” добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате TXT.
+ vim preferences.txt
+ Жму I
+ Набираю текст
+ Любимый фильм : О чём говорят мужчины
+ Любимый сериал : Локи
+ Любимая еда : шашлык
+ Любимое время года : Лето
+ Страна, которую хотели бы посетить : Грузия 
+ Жму Escape, потом :, потом w, потом q, потом Enter
+ 11. Создать файл sklls.txt добавить информацию о скиллах которые будут изучены на курсе в формате TXT
+ vim sklls.txt
+ Жму I
+ Набираю текст
+ Skills:
+ 	Linux bash: yes
+	GIT: yes
+	Chrome dev tools:yes
+	Test API for Postman:yes
+	SQL Basics:yes
+	Mobile testing:yes
+	JS Basics:yes
+	CSS Basics:yes
+	Working with ADB:yes
+	Working with Charlies/Fiddler:yes
+	Explorary testing:yes
+	White box testing:yes
+ Жму Escape, потом :, потом w, потом q, потом Enter	
+ 12. Сделать коммит в одну строку.
+ git add preferences.txt sklls.txt && git commit -m "add preferences.txt, add sklls.txt"
+ 13. Отправить сразу 2 файла на внешний репозиторий.
+ git push
+ 14. На веб интерфейсе создать файл bug_report.txt.
+ Открыть гитхаб, перейти в репозиторий TXT, найти кнопку Add file ->Create new file - нажать
+ Откроется страница с формой для нового файла. Заполнить имя файла. 
+ 15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ Внизу формы добавить комментарий к комиту "add bug_report.txt" и сделать комит нажав Commit changes
+ 16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт в формате TXT.
+ Найти в репозитории bug_report.txt и открыть его . Нажать на карандаш справа -> форма редактирования.
+ Вбить текст:
+ Bug report
+Reproducibility: always
+Severity: trivial
+Priority: minor
+Product Version : -
+Summary : Emoji is not displayed in the comments to the news ixbt.com
+Description	:
+Не отображаются эмодзи в комменнтариях новостей на сайте  ixbt.com
+Steps To Reproduce:
+Все действия делать в Google Chrome
+1)Открыть сайт ixbt.com
+2)Открыть любую ссылку из раздела новости
+3)Сделать логин на сайт 
+4)Найти форму для ввода комментариев
+5)Поставить курсор в форму и нажать правой кнопкой мыши -> будет показано меню
+6)Выбрать пункт эмодзи и выбрать любую эмодзи несколько раз - они появится на форме 
+7)Нажать отправить -> страница перезагрузится
+Итог - комменнтарий есть, а содержимое не отображается
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ Внизу формы нажать Commit changes с комментарием "add text"
+ 18. Синхронизировать внешний и локальный репозиторий TXT
+ git pull
