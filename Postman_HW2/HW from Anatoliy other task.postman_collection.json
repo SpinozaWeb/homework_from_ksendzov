@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "85031ed6-93b1-4ba7-89e1-64b308457666",
+		"name": "HW from Anatoliy other task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "297956"
+	},
+	"item": [
+		{
+			"name": "object_info_4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Статус код 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Спарсить response body в json.\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"//Спарсить request.\r",
+							"var requet = pm.request.url.query;\r",
+							"/*\r",
+							"2. http://162.55.220.72:5007/object_info_4\r",
+							"* Преобразовать пункты 12-13-14 (salary из реквеста и респонса равны) таким образом, чтобы проверка производилась циклом, в котором будет всего ОДИН тест. Имя теста должно меняться в зависимости от значения в Salary*/\r",
+							"const checkSalary = function(){\r",
+							"    for (let i=0; i<jsonData.salary.length; i++){\r",
+							"        pm.test(`Check salary value is ${jsonData.salary[i]}`, function () {\r",
+							"        console.log(jsonData.salary[i]);\r",
+							"        pm.expect(+jsonData.salary[i]).to.eql(+requet.get('salary')*(i+1));    \r",
+							"        });\r",
+							"    }\r",
+							"}\r",
+							"checkSalary();\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/object_info_4?name={{name}}&age={{age}}&salary={{salary}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"object_info_4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{name}}"
+						},
+						{
+							"key": "age",
+							"value": "{{age}}"
+						},
+						{
+							"key": "salary",
+							"value": "{{salary}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_info_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Статус код 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Спарсить response body в json.\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"//Спарсить request.\r",
+							"var requet = pm.request.body.formdata;\r",
+							"\r",
+							"/*\r",
+							"1)  Преобразовать задания 8 - 13 (проверить что в json имеется нужный параметр) таким образом, чтобы все проверки делались в цикле (1 проверка в цикле, в которую попадают нужные параметры). Название теста должно видоизменяться исходя из подаваемых данных. ( ${}  или другим способом)\r",
+							"*/ \r",
+							"const checkProperty = function(){\r",
+							"    for (let key in jsonData){\r",
+							"        pm.test(`The response property has ${key}`, function () {\r",
+							"            pm.expect(jsonData).to.have.property(key);\r",
+							"        });\r",
+							"    }\r",
+							"}\r",
+							"checkProperty();\r",
+							"\r",
+							"/* \r",
+							"2) ** Преобразовать задания 14 - 18 (проверить что параметр равен salary умножить на коэффициент) таким образом, чтобы все проверки делались в цикле (1 проверка в цикле, в которую попадают нужные параметры). Название теста должно видоизменяться исходя из подаваемых данных. ( ${}  или другим способом)\r",
+							"*/\r",
+							"let k = [1, 2, 2.7, 3.3, 3.8];\r",
+							"const checkSalary = function () {\r",
+							"    for (let key in jsonData) {   \r",
+							"        if (key.includes('salary')) {\r",
+							"            k.forEach((el) => {\r",
+							"                if(jsonData[key]/el === +requet.get('salary')){\r",
+							"                    pm.test(`Check ${key} value`, function () {\r",
+							"                        pm.expect(jsonData[key]).to.eql(+requet.get('salary') * el);\r",
+							"                    });\r",
+							"                }\r",
+							"            })\r",
+							"\r",
+							"        }\r",
+							"\r",
+							"    }\r",
+							"}\r",
+							"checkSalary();\r",
+							"\r",
+							"const summaryTest = function(){\r",
+							"    for (let key in jsonData){\r",
+							"        console.log(key);\r",
+							"        if(key.includes('salary')){\r",
+							"            let k = jsonData[key]/+requet.get('salary');\r",
+							"            pm.test(`Check ${key} value`, function () {\r",
+							"                pm.expect(jsonData[key]).to.eql(+requet.get('salary')*k);\r",
+							"            });\r",
+							"        }\r",
+							"        pm.test(`The response property has ${key}`, function () {\r",
+							"            pm.expect(jsonData).to.have.property(key);\r",
+							"        })\r",
+							"    }\r",
+							"}\r",
+							"\r",
+							"summaryTest();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{name}}",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "{{age}}",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "{{salary}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/user_info_2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "object_info_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Статус код 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Спарсить response body в json.\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"//Спарсить request.\r",
+							"var requet = pm.request.url.query;\r",
+							"console.log(requet);\r",
+							"\r",
+							"//Проверить, что name в ответе равно name s request (name забрать из request.)\r",
+							"pm.test(\"Check name value\", function () {\r",
+							"    pm.expect(jsonData.name).to.eql(requet.get('name'));\r",
+							"});\r",
+							"\r",
+							"//Проверить, что age в ответе равно age s request (age забрать из request.)\r",
+							"pm.test(\"Check age value\", function () {\r",
+							"    pm.expect(jsonData.age).to.eql(requet.get('age'));\r",
+							"});\r",
+							"\r",
+							"//Проверить, что salary в ответе равно salary s request (salary забрать из request.)\r",
+							"pm.test(\"Check salary value\", function () {\r",
+							"    pm.expect(jsonData.salary).to.eql(+requet.get('salary'));\r",
+							"});\r",
+							"\r",
+							"//Вывести в консоль параметр family из response.\r",
+							"console.log(jsonData.family);\r",
+							"\r",
+							"//Проверить, что у параметра dog есть параметры name.\r",
+							"pm.test(\"The dog property has name\", function () {\r",
+							"    pm.expect(jsonData.family.pets.dog).to.have.property('name');\r",
+							"});\r",
+							"\r",
+							"//Проверить, что у параметра dog есть параметры age.\r",
+							"pm.test(\"The dog property has age\", function () {\r",
+							"    pm.expect(jsonData.family.pets.dog).to.have.property('age');\r",
+							"});\r",
+							"\r",
+							"//Проверить, что параметр name имеет значение Luky.\r",
+							"pm.test(\"Name parameter is Luky\", function () {\r",
+							"    pm.expect(jsonData.family.pets.dog).to.have.property('name', \"Luky\");\r",
+							"});\r",
+							"\r",
+							"//Проверить, что параметр age имеет значение 4.\r",
+							"pm.test(\"Age parameter is 4\", function () {\r",
+							"    pm.expect(jsonData.family.pets.dog).to.have.property('age', 4);\r",
+							"});\r",
+							"\r",
+							"/* \r",
+							"3. http://162.55.220.72:5005/object_info_3\r",
+							" Преобразовать задания 5-7 (сравнить идентичные поля в реквесте и респонсе) таким образом, чтобы это делалось ЗА ОДИН ТЕСТ (сразу все 3 поля) БЕЗ ЦИКЛОВ! (глубокое сравнение объектов)\r",
+							"*/\r",
+							"let object_from_responce = {\r",
+							"    \"age\": jsonData.age,\r",
+							"    \"name\":jsonData.name,\r",
+							"    \"salary\":jsonData.salary\r",
+							"};\r",
+							"\r",
+							"let object_from_request = {\r",
+							"        \"age\":requet.get('age'),\r",
+							"        \"name\":requet.get('name'),\r",
+							"        \"salary\":Number(requet.get('salary'))\r",
+							"};\r",
+							"\r",
+							"pm.test(\"deep.equal несколько ассершенов\", function () {\r",
+							"    pm.expect(object_from_responce).to.deep.equal(object_from_request)\r",
+							"});\r",
+							"\r",
+							"const assert = require('assert');\r",
+							"\r",
+							"pm.test(\"Deep equal\", function(){\r",
+							"    assert.deepEqual(object_from_responce,object_from_request);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/object_info_3?name=Andrey&age=37&salary=2500",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"object_info_3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Andrey"
+						},
+						{
+							"key": "age",
+							"value": "37"
+						},
+						{
+							"key": "salary",
+							"value": "2500"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "name",
+			"value": "Andrey",
+			"type": "string"
+		},
+		{
+			"key": "age",
+			"value": "37",
+			"type": "string"
+		},
+		{
+			"key": "salary",
+			"value": "2500",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "http://162.55.220.72:5007",
+			"type": "string"
+		}
+	]
+}

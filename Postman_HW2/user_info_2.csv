@@ -1,0 +1,27 @@
+name,age,salary,statusCode
+Jhon,18,1,200
+,,,500
+aaa,18,100,200
+aa,18,100,500
+qwertyuiopasdfghjklzxcvbnmqwertyuiopasd,18,100,200
+qwertyuiopasdfghjklzxcvbnmqwertyuiopasdk,18,100,500
+aaa,18,100,200
+aaa,17,100,500
+aaa,120,100,200
+aaa,121,100,500
+aaa,aa,100,500
+aaa,18,1,200
+aaa,18,0,500
+aaa,18,1000000,200
+aaa,18,1000001,500
+aaa,18,aa,500
+"AA A",18,100,200
+"aa ",18,100,500
+" aa",18,100,500
+aaa,"18.5",100,500
+aaa,18,"100.1",500
+"😋",18,100,200
+"@#$#$$%$^&^*&(*()){}:?><><!!!",18,100,200
+"Select * from users",18,100,500
+"alert('Hello!');",18,100,500
+

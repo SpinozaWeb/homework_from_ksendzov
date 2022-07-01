@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "9462ad54-e818-4d32-b23e-87f17bfea2a5",
+		"name": "HW from Anatoliy Task2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "297956"
+	},
+	"item": [
+		{
+			"name": "user_info_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"statusCode = pm.iterationData.get(\"statusCode\");\r",
+							"\r",
+							"const checkStatusCode = function(){\r",
+							"    if(statusCode === 200){\r",
+							"        pm.test(\"Status code is 200\", function () {\r",
+							"            pm.response.to.have.status(200);\r",
+							"        });\r",
+							"    }else{\r",
+							"    pm.test(\"Status code is 500\", function () {\r",
+							"        pm.response.to.have.status(500);\r",
+							"    });\r",
+							"    }\r",
+							"}\r",
+							"checkStatusCode();\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{name}}",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "{{age}}",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "{{salary}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/user_info_2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
